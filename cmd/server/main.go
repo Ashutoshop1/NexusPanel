@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
 
 	"github.com/2670044605/NexusPanel/internal/api"
 	"github.com/2670044605/NexusPanel/internal/database"
