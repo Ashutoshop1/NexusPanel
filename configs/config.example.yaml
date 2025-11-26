@@ -1,0 +1,238 @@
+# NexusPanel Configuration File
+
+# Server Configuration
+server:
+  # HTTP server settings
+  host: "0.0.0.0"
+  port: 8080
+  mode: "debug" # debug, release, test
+  
+  # HTTPS settings (optional)
+  tls:
+    enabled: false
+    cert_file: ""
+    key_file: ""
+  
+  # Session settings
+  session:
+    secret: "change-this-secret-key-in-production"
+    max_age: 86400 # 24 hours
+
+# Database Configuration
+database:
+  # Database type: postgres, sqlite
+  type: "sqlite"
+  
+  # SQLite settings
+  sqlite:
+    path: "./nexuspanel.db"
+  
+  # PostgreSQL settings
+  postgres:
+    host: "localhost"
+    port: 5432
+    user: "nexuspanel"
+    password: "your-password"
+    database: "nexuspanel"
+    sslmode: "disable"
+    max_open_conns: 100
+    max_idle_conns: 10
+    conn_max_lifetime: 3600 # seconds
+  
+  # Auto migration
+  auto_migrate: true
+
+# Redis Configuration (Optional)
+redis:
+  enabled: false
+  host: "localhost"
+  port: 6379
+  password: ""
+  db: 0
+  pool_size: 10
+
+# JWT Configuration
+jwt:
+  secret: "change-this-jwt-secret-in-production"
+  expire_hours: 168 # 7 days
+  refresh_expire_hours: 720 # 30 days
+
+# Internationalization
+i18n:
+  # Default language: zh-CN, en-US
+  default_language: "zh-CN"
+  # Supported languages
+  languages:
+    - "zh-CN"
+    - "en-US"
+  # Language file path
+  path: "./internal/i18n"
+
+# Logging Configuration
+logging:
+  # Log level: debug, info, warn, error, fatal
+  level: "info"
+  # Log format: json, console
+  format: "console"
+  # Log output: stdout, file
+  output: "stdout"
+  # Log file path (when output is file)
+  file:
+    path: "./logs/nexuspanel.log"
+    max_size: 100 # megabytes
+    max_backups: 10
+    max_age: 30 # days
+    compress: true
+
+# Security Configuration
+security:
+  # CORS settings
+  cors:
+    enabled: true
+    allowed_origins:
+      - "http://localhost:5173"
+      - "http://localhost:3000"
+    allowed_methods:
+      - "GET"
+      - "POST"
+      - "PUT"
+      - "DELETE"
+      - "OPTIONS"
+    allowed_headers:
+      - "Origin"
+      - "Content-Type"
+      - "Authorization"
+      - "Accept-Language"
+    allow_credentials: true
+    max_age: 86400
+  
+  # Rate limiting
+  rate_limit:
+    enabled: true
+    requests_per_minute: 60
+  
+  # Password policy
+  password:
+    min_length: 8
+    require_uppercase: true
+    require_lowercase: true
+    require_number: true
+    require_special: false
+
+# SSH Configuration
+ssh:
+  # SSH key storage encryption
+  encryption_key: "change-this-encryption-key-32-chars-long!!"
+  # Default SSH timeout
+  timeout: 30 # seconds
+  # Keep alive interval
+  keep_alive: 10 # seconds
+
+# Agent Configuration
+agent:
+  # Agent communication protocol: grpc
+  protocol: "grpc"
+  # Agent port
+  port: 9090
+  # Agent heartbeat interval
+  heartbeat_interval: 30 # seconds
+  # Agent timeout
+  timeout: 90 # seconds
+  # TLS settings for agent communication
+  tls:
+    enabled: false
+    cert_file: ""
+    key_file: ""
+    ca_file: ""
+
+# Monitoring Configuration
+monitoring:
+  # Metrics collection interval
+  collection_interval: 60 # seconds
+  # Metrics retention period
+  retention_days: 30
+  # Alert check interval
+  alert_check_interval: 60 # seconds
+
+# Plugin Configuration
+plugins:
+  # Plugin directory
+  directory: "./plugins"
+  # Enable plugin hot reload
+  hot_reload: true
+  # Plugin execution timeout
+  timeout: 300 # seconds
+
+# AI Assistant Configuration
+ai:
+  enabled: false
+  # AI provider: openai, azure, custom
+  provider: "openai"
+  # API settings
+  api_key: ""
+  api_endpoint: ""
+  model: "gpt-3.5-turbo"
+  # Context settings
+  max_tokens: 2000
+  temperature: 0.7
+
+# Backup Configuration
+backup:
+  enabled: false
+  # Backup schedule (cron expression)
+  schedule: "0 2 * * *" # Daily at 2 AM
+  # Backup retention
+  retention_days: 7
+  # Backup storage path
+  storage_path: "./backups"
+
+# Email Configuration (for notifications)
+email:
+  enabled: false
+  smtp_host: "smtp.gmail.com"
+  smtp_port: 587
+  username: ""
+  password: ""
+  from: "noreply@nexuspanel.com"
+  use_tls: true
+
+# WebSocket Configuration
+websocket:
+  # WebSocket path
+  path: "/ws"
+  # Read buffer size
+  read_buffer_size: 1024
+  # Write buffer size
+  write_buffer_size: 1024
+  # Heartbeat interval
+  heartbeat_interval: 30 # seconds
+
+# File Manager Configuration
+filemanager:
+  # Maximum upload size
+  max_upload_size: 104857600 # 100MB
+  # Allowed file extensions (empty means all)
+  allowed_extensions: []
+  # Forbidden file extensions
+  forbidden_extensions:
+    - ".exe"
+    - ".sh"
+    - ".bat"
+  # Upload directory
+  upload_dir: "./uploads"
+
+# System Configuration
+system:
+  # Admin user initialization
+  admin:
+    username: "admin"
+    email: "admin@nexuspanel.com"
+    password: "admin123" # Change this in production!
+  
+  # Pagination
+  pagination:
+    default_page_size: 20
+    max_page_size: 100
+  
+  # Timezone
+  timezone: "UTC"
