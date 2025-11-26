@@ -31,7 +31,7 @@ func Encrypt(data, key []byte) (string, error) {
 	if len(key) != 32 {
 		return "", errors.New("encryption key must be exactly 32 bytes for AES-256")
 	}
-	
+
 	block, err := aes.NewCipher(key)
 	if err != nil {
 		return "", err
@@ -55,7 +55,7 @@ func Decrypt(encryptedData string, key []byte) ([]byte, error) {
 	if len(key) != 32 {
 		return nil, errors.New("encryption key must be exactly 32 bytes for AES-256")
 	}
-	
+
 	ciphertext, err := base64.StdEncoding.DecodeString(encryptedData)
 	if err != nil {
 		return nil, err

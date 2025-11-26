@@ -9,7 +9,7 @@ import (
 // ListServers returns list of servers
 func ListServers(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"data": []interface{}{},
+		"data":    []interface{}{},
 		"message": "Server list (not yet implemented)",
 	})
 }
@@ -59,7 +59,7 @@ func GetServerMetrics(c *gin.Context) {
 // ListServerGroups returns list of server groups
 func ListServerGroups(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"data": []interface{}{},
+		"data":    []interface{}{},
 		"message": "Server group list (not yet implemented)",
 	})
 }

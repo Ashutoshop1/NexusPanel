@@ -6,31 +6,31 @@ import (
 
 // Config represents the application configuration
 type Config struct {
-	Server     ServerConfig     `mapstructure:"server"`
-	Database   DatabaseConfig   `mapstructure:"database"`
-	Redis      RedisConfig      `mapstructure:"redis"`
-	JWT        JWTConfig        `mapstructure:"jwt"`
-	I18n       I18nConfig       `mapstructure:"i18n"`
-	Logging    LoggingConfig    `mapstructure:"logging"`
-	Security   SecurityConfig   `mapstructure:"security"`
-	SSH        SSHConfig        `mapstructure:"ssh"`
-	Agent      AgentConfig      `mapstructure:"agent"`
-	Monitoring MonitoringConfig `mapstructure:"monitoring"`
-	Plugins    PluginsConfig    `mapstructure:"plugins"`
-	AI         AIConfig         `mapstructure:"ai"`
-	Backup     BackupConfig     `mapstructure:"backup"`
-	Email      EmailConfig      `mapstructure:"email"`
-	WebSocket  WebSocketConfig  `mapstructure:"websocket"`
+	Server      ServerConfig      `mapstructure:"server"`
+	Database    DatabaseConfig    `mapstructure:"database"`
+	Redis       RedisConfig       `mapstructure:"redis"`
+	JWT         JWTConfig         `mapstructure:"jwt"`
+	I18n        I18nConfig        `mapstructure:"i18n"`
+	Logging     LoggingConfig     `mapstructure:"logging"`
+	Security    SecurityConfig    `mapstructure:"security"`
+	SSH         SSHConfig         `mapstructure:"ssh"`
+	Agent       AgentConfig       `mapstructure:"agent"`
+	Monitoring  MonitoringConfig  `mapstructure:"monitoring"`
+	Plugins     PluginsConfig     `mapstructure:"plugins"`
+	AI          AIConfig          `mapstructure:"ai"`
+	Backup      BackupConfig      `mapstructure:"backup"`
+	Email       EmailConfig       `mapstructure:"email"`
+	WebSocket   WebSocketConfig   `mapstructure:"websocket"`
 	FileManager FileManagerConfig `mapstructure:"filemanager"`
-	System     SystemConfig     `mapstructure:"system"`
+	System      SystemConfig      `mapstructure:"system"`
 }
 
 // ServerConfig represents server configuration
 type ServerConfig struct {
-	Host string     `mapstructure:"host"`
-	Port int        `mapstructure:"port"`
-	Mode string     `mapstructure:"mode"`
-	TLS  TLSConfig  `mapstructure:"tls"`
+	Host    string        `mapstructure:"host"`
+	Port    int           `mapstructure:"port"`
+	Mode    string        `mapstructure:"mode"`
+	TLS     TLSConfig     `mapstructure:"tls"`
 	Session SessionConfig `mapstructure:"session"`
 }
 
@@ -49,10 +49,10 @@ type SessionConfig struct {
 
 // DatabaseConfig represents database configuration
 type DatabaseConfig struct {
-	Type        string           `mapstructure:"type"`
-	SQLite      SQLiteConfig     `mapstructure:"sqlite"`
-	Postgres    PostgresConfig   `mapstructure:"postgres"`
-	AutoMigrate bool             `mapstructure:"auto_migrate"`
+	Type        string         `mapstructure:"type"`
+	SQLite      SQLiteConfig   `mapstructure:"sqlite"`
+	Postgres    PostgresConfig `mapstructure:"postgres"`
+	AutoMigrate bool           `mapstructure:"auto_migrate"`
 }
 
 // SQLiteConfig represents SQLite configuration
@@ -99,10 +99,10 @@ type I18nConfig struct {
 
 // LoggingConfig represents logging configuration
 type LoggingConfig struct {
-	Level  string           `mapstructure:"level"`
-	Format string           `mapstructure:"format"`
-	Output string           `mapstructure:"output"`
-	File   LogFileConfig    `mapstructure:"file"`
+	Level  string        `mapstructure:"level"`
+	Format string        `mapstructure:"format"`
+	Output string        `mapstructure:"output"`
+	File   LogFileConfig `mapstructure:"file"`
 }
 
 // LogFileConfig represents log file configuration
@@ -139,11 +139,11 @@ type RateLimitConfig struct {
 
 // PasswordConfig represents password policy configuration
 type PasswordConfig struct {
-	MinLength       int  `mapstructure:"min_length"`
+	MinLength        int  `mapstructure:"min_length"`
 	RequireUppercase bool `mapstructure:"require_uppercase"`
 	RequireLowercase bool `mapstructure:"require_lowercase"`
-	RequireNumber   bool `mapstructure:"require_number"`
-	RequireSpecial  bool `mapstructure:"require_special"`
+	RequireNumber    bool `mapstructure:"require_number"`
+	RequireSpecial   bool `mapstructure:"require_special"`
 }
 
 // SSHConfig represents SSH configuration
@@ -178,12 +178,12 @@ type PluginsConfig struct {
 
 // AIConfig represents AI configuration
 type AIConfig struct {
-	Enabled     bool   `mapstructure:"enabled"`
-	Provider    string `mapstructure:"provider"`
-	APIKey      string `mapstructure:"api_key"`
-	APIEndpoint string `mapstructure:"api_endpoint"`
-	Model       string `mapstructure:"model"`
-	MaxTokens   int    `mapstructure:"max_tokens"`
+	Enabled     bool    `mapstructure:"enabled"`
+	Provider    string  `mapstructure:"provider"`
+	APIKey      string  `mapstructure:"api_key"`
+	APIEndpoint string  `mapstructure:"api_endpoint"`
+	Model       string  `mapstructure:"model"`
+	MaxTokens   int     `mapstructure:"max_tokens"`
 	Temperature float64 `mapstructure:"temperature"`
 }
 
@@ -216,10 +216,10 @@ type WebSocketConfig struct {
 
 // FileManagerConfig represents file manager configuration
 type FileManagerConfig struct {
-	MaxUploadSize        int64    `mapstructure:"max_upload_size"`
-	AllowedExtensions    []string `mapstructure:"allowed_extensions"`
-	ForbiddenExtensions  []string `mapstructure:"forbidden_extensions"`
-	UploadDir            string   `mapstructure:"upload_dir"`
+	MaxUploadSize       int64    `mapstructure:"max_upload_size"`
+	AllowedExtensions   []string `mapstructure:"allowed_extensions"`
+	ForbiddenExtensions []string `mapstructure:"forbidden_extensions"`
+	UploadDir           string   `mapstructure:"upload_dir"`
 }
 
 // SystemConfig represents system configuration
@@ -276,14 +276,14 @@ func setDefaults() {
 	viper.SetDefault("server.host", "0.0.0.0")
 	viper.SetDefault("server.port", 8080)
 	viper.SetDefault("server.mode", "debug")
-	
+
 	viper.SetDefault("database.type", "sqlite")
 	viper.SetDefault("database.sqlite.path", "./nexuspanel.db")
 	viper.SetDefault("database.auto_migrate", true)
-	
+
 	viper.SetDefault("i18n.default_language", "zh-CN")
 	viper.SetDefault("i18n.languages", []string{"zh-CN", "en-US"})
-	
+
 	viper.SetDefault("logging.level", "info")
 	viper.SetDefault("logging.format", "console")
 	viper.SetDefault("logging.output", "stdout")

@@ -9,7 +9,7 @@ import (
 // ListUsers returns list of users (admin only)
 func ListUsers(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"data": []interface{}{},
+		"data":    []interface{}{},
 		"message": "User list (not yet implemented)",
 	})
 }
@@ -45,7 +45,7 @@ func DeleteUser(c *gin.Context) {
 // ListTasks returns list of tasks
 func ListTasks(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"data": []interface{}{},
+		"data":    []interface{}{},
 		"message": "Task list (not yet implemented)",
 	})
 }
@@ -88,7 +88,7 @@ func ExecuteTask(c *gin.Context) {
 // GetTaskLogs returns task execution logs
 func GetTaskLogs(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"data": []interface{}{},
+		"data":    []interface{}{},
 		"message": "Task logs (not yet implemented)",
 	})
 }
@@ -96,7 +96,7 @@ func GetTaskLogs(c *gin.Context) {
 // ListPlugins returns list of plugins
 func ListPlugins(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"data": []interface{}{},
+		"data":    []interface{}{},
 		"message": "Plugin list (not yet implemented)",
 	})
 }
@@ -160,7 +160,7 @@ func UpdateSettings(c *gin.Context) {
 // GetUserLogs returns user operation logs
 func GetUserLogs(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"data": []interface{}{},
+		"data":    []interface{}{},
 		"message": "User logs (not yet implemented)",
 	})
 }
@@ -168,7 +168,7 @@ func GetUserLogs(c *gin.Context) {
 // GetSystemLogs returns system logs
 func GetSystemLogs(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"data": []interface{}{},
+		"data":    []interface{}{},
 		"message": "System logs (not yet implemented)",
 	})
 }

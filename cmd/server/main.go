@@ -50,7 +50,7 @@ func main() {
 	// Start server
 	addr := fmt.Sprintf("%s:%d", cfg.Server.Host, cfg.Server.Port)
 	logger.Infof("Server listening on %s", addr)
-	
+
 	if err := router.Run(addr); err != nil {
 		logger.Fatalf("Failed to start server: %v", err)
 	}

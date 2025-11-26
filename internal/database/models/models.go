@@ -132,14 +132,14 @@ func (UserLog) TableName() string {
 
 // SSHKey represents an SSH key
 type SSHKey struct {
-	ID                   uint      `gorm:"primaryKey" json:"id"`
-	Name                 string    `gorm:"size:128;not null" json:"name"`
-	PublicKey            string    `gorm:"type:text;not null" json:"public_key"`
-	PrivateKeyEncrypted  string    `gorm:"type:text;not null" json:"-"`
-	PassphraseEncrypted  string    `gorm:"type:text" json:"-"`
-	CreatedAt            time.Time `gorm:"not null" json:"created_at"`
-	CreatedBy            uint      `gorm:"not null;index" json:"created_by"`
-	Creator              User      `gorm:"foreignKey:CreatedBy" json:"creator,omitempty"`
+	ID                  uint      `gorm:"primaryKey" json:"id"`
+	Name                string    `gorm:"size:128;not null" json:"name"`
+	PublicKey           string    `gorm:"type:text;not null" json:"public_key"`
+	PrivateKeyEncrypted string    `gorm:"type:text;not null" json:"-"`
+	PassphraseEncrypted string    `gorm:"type:text" json:"-"`
+	CreatedAt           time.Time `gorm:"not null" json:"created_at"`
+	CreatedBy           uint      `gorm:"not null;index" json:"created_by"`
+	Creator             User      `gorm:"foreignKey:CreatedBy" json:"creator,omitempty"`
 }
 
 // TableName specifies the table name for SSHKey

@@ -16,7 +16,7 @@ func GetMetrics(c *gin.Context) {
 // ListAlerts returns list of alerts
 func ListAlerts(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"data": []interface{}{},
+		"data":    []interface{}{},
 		"message": "Alert list (not yet implemented)",
 	})
 }
@@ -38,7 +38,7 @@ func ResolveAlert(c *gin.Context) {
 // ListAlertRules returns list of alert rules
 func ListAlertRules(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"data": []interface{}{},
+		"data":    []interface{}{},
 		"message": "Alert rule list (not yet implemented)",
 	})
 }

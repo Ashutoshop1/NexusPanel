@@ -14,7 +14,7 @@ func CORS(cfg config.CORSConfig) gin.HandlerFunc {
 		}
 
 		origin := c.Request.Header.Get("Origin")
-		
+
 		// Set CORS headers
 		c.Writer.Header().Set("Access-Control-Allow-Origin", origin)
 		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
@@ -38,7 +38,7 @@ func Auth() gin.HandlerFunc {
 		// 2. Validate token
 		// 3. Set user info in context
 		// 4. Call c.Next() if valid, otherwise c.AbortWithStatusJSON()
-		
+
 		// For now, just pass through
 		c.Next()
 	}
@@ -49,7 +49,7 @@ func RequireAdmin() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// TODO: Check if user has admin role
 		// Get user from context and verify role
-		
+
 		// For now, just pass through
 		c.Next()
 	}

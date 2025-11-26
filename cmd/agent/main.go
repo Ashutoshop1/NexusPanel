@@ -35,7 +35,7 @@ func main() {
 	// - Heartbeat mechanism
 
 	logger.Info("Agent started successfully")
-	
+
 	// Keep agent running
 	select {}
 }
