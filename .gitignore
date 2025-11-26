@@ -23,6 +23,8 @@ vendor/
 nexuspanel
 nexuspanel-server
 nexuspanel-agent
+server
+agent
 
 # Configuration files with secrets
 configs/config.yaml

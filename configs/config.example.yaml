@@ -121,8 +121,9 @@ security:
 
 # SSH Configuration
 ssh:
-  # SSH key storage encryption
-  encryption_key: "change-this-encryption-key-32-chars-long!!"
+  # SSH key storage encryption key.
+  # Must be exactly 32 characters long (32 bytes) for AES-256 encryption.
+  encryption_key: "change-this-32-char-key-here!!!"
   # Default SSH timeout
   timeout: 30 # seconds
   # Keep alive interval

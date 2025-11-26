@@ -60,17 +60,18 @@ func (j *JSONArray) Scan(value interface{}) error {
 
 // User represents a user in the system
 type User struct {
-	ID           uint       `gorm:"primaryKey" json:"id"`
-	Username     string     `gorm:"uniqueIndex;size:64;not null" json:"username"`
-	Email        string     `gorm:"uniqueIndex;size:255;not null" json:"email"`
-	PasswordHash string     `gorm:"size:255;not null" json:"-"`
-	Avatar       string     `gorm:"size:512" json:"avatar,omitempty"`
-	Role         string     `gorm:"size:32;not null;default:user" json:"role"`
-	Status       string     `gorm:"size:32;not null;default:active" json:"status"`
-	Language     string     `gorm:"size:16;not null;default:zh-CN" json:"language"`
-	CreatedAt    time.Time  `gorm:"not null" json:"created_at"`
-	UpdatedAt    time.Time  `gorm:"not null" json:"updated_at"`
-	LastLoginAt  *time.Time `json:"last_login_at,omitempty"`
+	ID                  uint       `gorm:"primaryKey" json:"id"`
+	Username            string     `gorm:"uniqueIndex;size:64;not null" json:"username"`
+	Email               string     `gorm:"uniqueIndex;size:255;not null" json:"email"`
+	PasswordHash        string     `gorm:"size:255;not null" json:"-"`
+	Avatar              string     `gorm:"size:512" json:"avatar,omitempty"`
+	Role                string     `gorm:"size:32;not null;default:user" json:"role"`
+	Status              string     `gorm:"size:32;not null;default:active" json:"status"`
+	Language            string     `gorm:"size:16;not null;default:zh-CN" json:"language"`
+	ForcePasswordChange bool       `gorm:"not null;default:false" json:"force_password_change"`
+	CreatedAt           time.Time  `gorm:"not null" json:"created_at"`
+	UpdatedAt           time.Time  `gorm:"not null" json:"updated_at"`
+	LastLoginAt         *time.Time `json:"last_login_at,omitempty"`
 }
 
 // TableName specifies the table name for User

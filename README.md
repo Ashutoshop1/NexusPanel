@@ -118,7 +118,11 @@ Default credentials:
 - Username: `admin`
 - Password: `admin123`
 
-**⚠️ Important: Change the default password after first login!**
+**⚠️ CRITICAL SECURITY WARNING:**
+- The default admin password `admin123` is a well-known credential and poses a significant security risk
+- You will be forced to change the password on your first login
+- Never use default credentials in production environments
+- Ensure you set a strong, unique password immediately after installation
 
 ---
 

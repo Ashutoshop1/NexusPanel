@@ -4,8 +4,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// I18nMiddleware handles internationalization
-func I18nMiddleware() gin.HandlerFunc {
+// I18n handles internationalization
+func I18n() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// Get language from various sources
 		lang := c.GetHeader("Accept-Language")

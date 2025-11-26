@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS users (
     role VARCHAR(32) NOT NULL DEFAULT 'user',
     status VARCHAR(32) NOT NULL DEFAULT 'active',
     language VARCHAR(16) NOT NULL DEFAULT 'zh-CN',
+    force_password_change BOOLEAN NOT NULL DEFAULT FALSE,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     last_login_at TIMESTAMP,
@@ -290,8 +291,9 @@ CREATE INDEX idx_settings_key ON settings(key);
 
 -- Insert default admin user (password: admin123)
 -- Note: This is a bcrypt hash of "admin123"
-INSERT INTO users (username, email, password_hash, role, status, language) 
-VALUES ('admin', 'admin@nexuspanel.com', '$2a$10$N9qo8uLOickgx2ZMRZoMye1J8EJ.5YyXS0qPVYQ2vZlZyKxbLQKUC', 'admin', 'active', 'zh-CN')
+-- WARNING: The default admin user is configured to require a password change on first login for security.
+INSERT INTO users (username, email, password_hash, role, status, language, force_password_change) 
+VALUES ('admin', 'admin@nexuspanel.com', '$2a$10$N9qo8uLOickgx2ZMRZoMye1J8EJ.5YyXS0qPVYQ2vZlZyKxbLQKUC', 'admin', 'active', 'zh-CN', TRUE)
 ON CONFLICT (username) DO NOTHING;
 
 -- Insert default roles

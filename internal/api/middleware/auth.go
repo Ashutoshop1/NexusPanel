@@ -54,21 +54,3 @@ func RequireAdmin() gin.HandlerFunc {
 		c.Next()
 	}
 }
-
-// I18n middleware for internationalization
-func I18n() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		// Get language from header or query parameter
-		lang := c.GetHeader("Accept-Language")
-		if lang == "" {
-			lang = c.Query("lang")
-		}
-		if lang == "" {
-			lang = "zh-CN" // Default language
-		}
-
-		// Set language in context
-		c.Set("language", lang)
-		c.Next()
-	}
-}
