@@ -57,6 +57,8 @@ const password = ref('')
 
 const handleLogin = () => {
   // TODO: Implement actual login logic
+  // SECURITY NOTE: localStorage is used here for development convenience.
+  // For production, use httpOnly cookies or secure session storage to prevent XSS attacks.
   localStorage.setItem('token', 'dummy-token')
   router.push('/dashboard')
 }
