@@ -5,7 +5,6 @@ package utils
 import (
 	"crypto/rand"
 	"encoding/base64"
-	"fmt"
 )
 
 // GenerateRandomString generates a random string of specified length
@@ -19,9 +18,6 @@ func GenerateRandomString(length int) (string, error) {
 		return "", err
 	}
 	encoded := base64.URLEncoding.EncodeToString(bytes)
-	if len(encoded) < length {
-		return "", fmt.Errorf("failed to generate string of length %d", length)
-	}
 	return encoded[:length], nil
 }
 
